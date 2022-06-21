@@ -21,6 +21,13 @@ Route::get('/', function () {
     return view('index');
 });
 
-// // // Dashboard
+// // Dashboard
 // Route::get('/', [DashboardController::class, 'index'])->middleware('guest');
 // Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('guest');
+
+ // Admin
+// Route::get('/admin', [AdminController::class, 'admin']);
+Route::get('/admin', 'App\Http\Controllers\AdminController@index');
+Route::get('/admin/bantuan_admin', 'App\Http\Controllers\BantuanController@index');
+Route::get('/admin/artikel', 'App\Http\Controllers\BantuanController@index');
+
