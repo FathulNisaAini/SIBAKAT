@@ -132,7 +132,7 @@
                   </div>
 
                   <div class="mb-3">
-                    <label for="exampleInputPassword1" class="form-label">Deskripsi Wahana</label>
+                    <label for="exampleInputPassword1" class="form-label">Deskripsi </label>
                     <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
                   </div>
 
