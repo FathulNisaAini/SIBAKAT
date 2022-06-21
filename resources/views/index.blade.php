@@ -16,6 +16,7 @@
 </head>
 <body>
     
+    
 <!-- header section starts  -->
 
 <header class="header">
@@ -35,42 +36,6 @@
 
     <div class="icons">
         <a href="#" class="btn">Masuk</a>
-    </div>
-
-    <div class="cart-items-container">
-        <div class="cart-item">
-            <span class="fas fa-times"></span>
-            <img src="images/cart-item-1.png" alt="">
-            <div class="content">
-                <h3>cart item 01</h3>
-                <div class="price">$15.99/-</div>
-            </div>
-        </div>
-        <div class="cart-item">
-            <span class="fas fa-times"></span>
-            <img src="images/cart-item-2.png" alt="">
-            <div class="content">
-                <h3>cart item 02</h3>
-                <div class="price">$15.99/-</div>
-            </div>
-        </div>
-        <div class="cart-item">
-            <span class="fas fa-times"></span>
-            <img src="images/cart-item-3.png" alt="">
-            <div class="content">
-                <h3>cart item 03</h3>
-                <div class="price">$15.99/-</div>
-            </div>
-        </div>
-        <div class="cart-item">
-            <span class="fas fa-times"></span>
-            <img src="{!! asset('images/cart-item-4.png') !!}" alt="">
-            <div class="content">
-                <h3>cart item 04</h3>
-                <div class="price">$15.99/-</div>
-            </div>
-        </div>
-        <a href="#" class="btn">checkout now</a>
     </div>
 
 </header>
