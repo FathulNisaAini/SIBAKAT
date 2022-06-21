@@ -11,6 +11,7 @@
 
     <!-- custom css file link  -->
     <link rel="stylesheet" href="{!! asset('css/style.css') !!}">
+    <link rel="shortcut icon" href="{!! asset('images/logo.png') !!}">
 
 </head>
 <body>
