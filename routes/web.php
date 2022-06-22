@@ -29,7 +29,8 @@ Route::get('/', function () {
 // Route::get('/admin', [AdminController::class, 'admin']);
 
 Route::get('/', 'App\Http\Controllers\DashboardController@index');
-Route::get('/artikel/{id}','App\Http\Controllers\ArtikelController@index');
+//Route::get('/artikel/{id}','App\Http\Controllers\ArtikelController@index');
+//Route::get('/bantuan/{id}','App\Http\Controllers\BantuanController@index');
 
 Route::get('/admin', 'App\Http\Controllers\AdminController@index');
 Route::get('/admin/bantuan_admin', 'App\Http\Controllers\AdminController@bantuan');

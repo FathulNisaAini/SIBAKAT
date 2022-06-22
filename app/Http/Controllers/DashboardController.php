@@ -12,9 +12,15 @@ use Illuminate\Support\Facades\Hash;
 class DashboardController extends Controller
 {
     public function index()
-    {
-        $artikel = DB::table('artikel')->get();
-        //dd($artikel);
-        return view('index', compact('artikel'));
+    {      
+        $artikel = DB::table('artikel')
+        ->join('admin', 'admin.id_admin', '=', 'artikel.id_admin')
+        ->get();
+        $bantuan = DB::table('bantuan')
+        ->latest('id_bantuan')
+        ->take(3)
+        ->get();
+        //dd($bantuan);
+        return view('index', compact('artikel','bantuan'));
     }
 }

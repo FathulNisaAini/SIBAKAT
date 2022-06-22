@@ -47,20 +47,12 @@
 
     <div class="box-container">
 
-        <div class="box" style="background-image:linear-gradient(to bottom, rgba(3, 15, 29, 0.7) 50%,rgba(3, 15, 29, 0.6) 100%), url('images/a2.jpeg');background-position: center">
-            <h3 style="margin-top: 26%">Bantuan Pendidikan PT Sinar Mas</h3>
+    @foreach($bantuan as $bantuan)
+        <div class="box" style="background-image:linear-gradient(to bottom, rgba(3, 15, 29, 0.7) 50%,rgba(3, 15, 29, 0.6) 100%), url('images/{{$bantuan->gambar}}');background-position: center">
+            <h3 style="margin-top: 26%">{{$bantuan->nama}}</h3>
             <a href="#" class="btn">Detail Bantuan</a>
         </div>
-
-        <div class="box" style="background-image:linear-gradient(to bottom, rgba(3, 15, 29, 0.7) 50%,rgba(3, 15, 29, 0.6) 100%), url('images/a3.jpeg');background-position: center">
-            <h3 style="margin-top: 26%">Bantuan Kesja Pemda Nganjuk</h3>
-            <a href="#" class="btn">Detail Bantuan</a>
-        </div>
-
-        <div class="box" style="background-image:linear-gradient(to bottom, rgba(3, 15, 29, 0.7) 50%,rgba(3, 15, 29, 0.6) 100%), url('images/bb.png');background-position: center">
-            <h3 style="margin-top: 26%">Bantuan Mak2</h3>
-            <a href="#" class="btn">Detail Bantuan</a>
-        </div>
+    @endforeach
 
     </div>
 
@@ -81,10 +73,10 @@
             </div>
             <div class="content">
                 <a href="#" class="title">{{$artikel->judul}}</a>
-                <span>by {{$artikel->uploader}} /{{ \Carbon\Carbon::parse($artikel->tanggal)->format('j F, Y') }}</span>
+                <span>by {{$artikel->nama}} /{{ \Carbon\Carbon::parse($artikel->tanggal)->format('j F, Y') }}</span>
                 <p>{{$artikel->judul}}</p>
                 <p>{{$artikel->detail}}}</p>
-                <a href="{{ url('artikel') }}/{{$artikel->id}}" class="btn">selengkapnya</a>
+                <a href="{{ url('artikel') }}/{{$artikel->id_artikel}}" class="btn">selengkapnya</a>
             </div>
         </div>
         @endforeach
