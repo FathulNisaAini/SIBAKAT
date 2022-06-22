@@ -13,14 +13,14 @@
 		<!-- SLIDER REVOLUTION 4.x CSS SETTINGS -->
         <link rel="shortcut icon" href="{!! asset('images/logo.png') !!}">
 	
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
 
 	
 	
 	
-	<!--google material icon-->
+	  <!--google material icon-->
         <link href="https://fonts.googleapis.com/css2?family=Material+Icons"
       rel="stylesheet">
   </head>
@@ -33,22 +33,19 @@
                 <h3><img src="{!! asset('images/logo.png') !!}" class="img-fluid"/><span>SIBAKAT</span></h3>
             </div>
             <ul class="list-unstyled components">
-			          <li  class="">
+			          <li  class="active">
                     <a href="/admin" class="dashboard"><i class="material-icons">dashboard</i><span>Dashboard</span></a>
                 </li>
-                <li class="">
+                <li class="active">
                     <a href="/admin/bantuan_admin"><i class="material-icons">grid_on</i><span>Bantuan</span></a>
                 </li>
-                <li class="">
+                <li class="active">
                     <a href="/admin/artikel"><i class="material-icons">date_range</i><span>Artikel</span></a>
-                </li>
-                <li class="">
-                    <a href="/admin/tambah_bantuan"><i class="material-icons">date_range</i><span>Tambah Bantuan</span></a>
                 </li>
             </ul> 
         </nav>
         <!-- Page Content  -->
-        <div id="content">
+<div id="content">
 		
 		<div class="top-navbar">
             <nav class="navbar navbar-expand-lg">
@@ -72,12 +69,13 @@
           <h3 id="judul" >Bantuan</h3>
           <h6 class="card-subtitle mb-2 text-muted">Tabel Data Informasi Bantuan</h6>
           <div class="d-grid gap-2 d-md-block mt-3"> 
-            <button type="button" class="btn btn-primary" href="/admin/artikel">Tambah</button> 
+            <a role="button" class="btn btn-primary" href="/admin/tambah_bantuan">Tambah</a> 
           </div>
         </div>
 
     <div class="table-responsive">
         <table class="table table-hover mt-2 text-center">
+          
             <tr>
       
               <th>No</th>
@@ -87,15 +85,23 @@
               <th class="">Aksi</th>
       
             </tr>
-      
+          
+          @foreach($bantuan as $bantuan)
+          @php
+            $gambar = $bantuan->gambar;
+            if ($bantuan->gambar == null) {
+                $gambar = 'notfound.jpg';
+            } 
+          @endphp
+
             <tr>
-              <td>1</td>
-              <td>Bansos PKH Yang Cair Juni 2022</td>
+              <td>{{$bantuan->id_bantuan}}</td>
+              <td>{{$bantuan->nama}}</td>
               <td>
-                <img src="{!! asset('images/a1.jpg') !!}" width="150"  class="img-fluid" alt="Responsive image">
+                <img src="{!! asset('images/' . $gambar . '') !!}" width="150"  class="img-fluid" alt="''.$bantuan->gambar.''">
               </td>
               <td>
-                <textarea readonly class="form-control" id="exampleFormControlTextarea1" rows="3" >Bansos PKH Tahap II Kembali Disalurkan Pada Juni 2022. Bansos PKH Diberikan Bagi Keluarga Yang Terdaftar Dalam Data Terpadu Kesejahteraan Sosial (DTKS) Dan Sesuai Kategori Penerima PKH Menurut Kementerian Sosial (Kemensos)</textarea>
+                <textarea readonly class="form-control" id="exampleFormControlTextarea1" rows="3" >{{$bantuan->deskripsi}}</textarea>
               </td>
               <td> 
                 <div class="d-grid gap-2 d-md-block"> 
@@ -105,32 +111,7 @@
               </td>
     
             </tr>
-            <tr>
-                <td>2</td>
-                <td>BLT minyak goreng</td>
-                <td><img src="{!! asset('images/bb.png') !!}" width="150"  class="img-fluid" alt="Responsive image"></td>
-                <td><textarea readonly   class="form-control" id="exampleFormControlTextarea1" rows="3" > Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio dolores ex animi cupiditate deserunt accusantium consequuntur ab. Repudiandae atque laborum officia ipsa possimus libero rerum quam nostrum eaque! Laborum, magni!</textarea></td>
-                <td> 
-                  <div class="d-grid gap-2 d-md-block"> 
-                    <button class="btn btn-success">Ubah</button>  
-                    <button class="btn btn-danger ">Hapus</button>
-                  </div>  
-                </td>
-      
-            </tr>
-            <tr>
-                <td>3</td>
-                <td>BLT UMKM</td>
-                <td><img src="{!! asset('images/bb.png') !!}" width="150"  class="img-fluid" alt="Responsive image"></td>
-                <td><textarea readonly   class="form-control" id="exampleFormControlTextarea1" rows="3" > Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio dolores ex animi cupiditate deserunt accusantium consequuntur ab. Repudiandae atque laborum officia ipsa possimus libero rerum quam nostrum eaque! Laborum, magni!</textarea></td>
-                <td> 
-                  <div class="d-grid gap-2 d-md-block"> 
-                    <button class="btn btn-success">Ubah</button>  
-                    <button class="btn btn-danger ">Hapus</button>
-                  </div>  
-              </td>
-      
-            </tr>
+          @endforeach
           </table>
     </div>
   </div>
@@ -138,15 +119,15 @@
 </div>
 
 
-     <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+   <!-- Optional JavaScript -->
+   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
    <script src="js/jquery-3.3.1.slim.min.js"></script>
    <script src="js/popper.min.js"></script>
    <script src="js/bootstrap.min.js"></script>
    <script src="js/jquery-3.3.1.min.js"></script>
   
   
-  <script type="text/javascript">
+<script type="text/javascript">
   $(document).ready(function () {
             $('#sidebarCollapse').on('click', function () {
                 $('#sidebar').toggleClass('active');
@@ -160,6 +141,5 @@
         });          
        
 </script>
-
-  </body>
+</body>
 </html>

@@ -26,22 +26,24 @@
     </head>
     <body>
                 <form>   
+                    @csrf
+                    <input type="hidden" class="form-control" name="id_bantuan" value="">
                     <div class="mb-3">
                         <label for="exampleInputPassword1" class="form-label">Nama </label>
-                        <input type="text" class="form-control">
+                        <input type="text" class="form-control" name="nama">
                     </div>
                     <div class="mb-3">
                         <label for="exampleInputPassword1" class="form-label">Gambar </label>
-                        <input type="file" class="form-control">
+                        <input type="file" class="form-control" name="gambar">
                     </div>
 
                     <div class="mb-3">
                         <label for="exampleInputPassword1" class="form-label">Deskripsi </label>
-                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                        <textarea class="form-control" name="deskripsi" id="exampleFormControlTextarea1" rows="3"></textarea>
                     </div>
                 </form>
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Tambah Data</button>
+            <button type="button" class="btn btn-danger" onclick="history.back();">Kembali</button>
+            <button type="submit" class="btn btn-primary" onclick="return confirm('Apakah Anda Yakin Ingin Menambah Data?')">Tambah Data</button>
     </body>
  
 

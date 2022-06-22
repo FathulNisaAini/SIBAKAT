@@ -19,7 +19,8 @@ class AdminController extends Controller
 
     public function bantuan()
     {
-        return view('bantuan_admin');
+        $bantuan = DB::table('bantuan')->get();
+        return view('bantuan_admin', compact('bantuan'));
     }
 
     public function artikel()
