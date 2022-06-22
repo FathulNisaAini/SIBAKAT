@@ -33,14 +33,14 @@
                 <h3><img src="{!! asset('images/logo.png') !!}" class="img-fluid"/><span>SIBAKAT</span></h3>
             </div>
             <ul class="list-unstyled components">
-			<li  class="active">
-                    <a href="#" class="dashboard"><i class="material-icons">dashboard</i><span>Dashboard</span></a>
+			          <li  class="">
+                    <a href="/admin" class="dashboard"><i class="material-icons">dashboard</i><span>Dashboard</span></a>
                 </li>
                 <li class="">
-                    <a href="#"><i class="material-icons">grid_on</i><span>Bantuan</span></a>
+                    <a href="/admin/bantuan_admin"><i class="material-icons">grid_on</i><span>Bantuan</span></a>
                 </li>
-               <li class="">
-                    <a href="#"><i class="material-icons">date_range</i><span>Artikel</span></a>
+                <li class="">
+                    <a href="/admin/artikel"><i class="material-icons">date_range</i><span>Artikel</span></a>
                 </li>
             </ul> 
         </nav>

@@ -28,6 +28,10 @@ Route::get('/', function () {
  // Admin
 // Route::get('/admin', [AdminController::class, 'admin']);
 Route::get('/admin', 'App\Http\Controllers\AdminController@index');
-Route::get('/admin/bantuan_admin', 'App\Http\Controllers\BantuanController@index');
-Route::get('/admin/artikel', 'App\Http\Controllers\BantuanController@index');
+Route::get('/admin/bantuan_admin', 'App\Http\Controllers\AdminController@bantuan');
+Route::get('/admin/artikel', 'App\Http\Controllers\AdminController@artikel');
+Route::get('/admin/tambah_bantuan', 'App\Http\Controllers\AdminController@tambah');
+
+
+
 

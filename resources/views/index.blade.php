@@ -35,7 +35,7 @@
     </nav>
 
     <div class="icons">
-        <a href="#" class="btn">Masuk</a>
+        <a href="admin" class="btn">Masuk</a>
     </div>
 
 </header>
@@ -49,7 +49,7 @@
     <div class="content">
         <h3>SIBAKAT</h3>
         <p>Sistem Informasi Bantuan Masyarakat</p>
-        <a href="#" class="btn">Masuk</a>
+        <a href="admin" class="btn">Masuk</a>
     </div>
 
 </section>

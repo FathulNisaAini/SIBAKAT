@@ -16,4 +16,19 @@ class AdminController extends Controller
     {      
         return view('admin');
     }
+
+    public function bantuan()
+    {
+        return view('bantuan_admin');
+    }
+
+    public function artikel()
+    {
+        return view('artikel');
+    }
+
+    public function tambah()
+    {
+        return view('tambah_bantuan');
+    }
 }
