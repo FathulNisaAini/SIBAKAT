@@ -13,23 +13,23 @@ use App\Models\Tiket;
 class AdminController extends Controller
 {
     public function index()
-    {      
+    {
         return view('admin');
     }
 
     public function bantuan()
     {
         $bantuan = DB::table('bantuan')->get();
-        return view('bantuan_admin', compact('bantuan'));
+        return view('admin_bantuan', compact('bantuan'));
     }
 
     public function artikel()
     {
-        return view('artikel');
+        return view('admin_artikel');
     }
 
     public function tambah()
     {
-        return view('tambah_bantuan');
+        return view('admin_tambah_bantuan');
     }
 }

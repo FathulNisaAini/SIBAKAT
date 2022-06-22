@@ -13,7 +13,7 @@ use App\Models\Tiket;
 class ArtikelController extends Controller
 {
     public function index($id)
-    {      
-        return view('artikel');
+    {
+        return view('admin_artikel');
     }
 }

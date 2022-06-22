@@ -13,7 +13,7 @@ use App\Models\Tiket;
 class BantuanController extends Controller
 {
     public function index()
-    {      
-        return view('bantuan_admin');
+    {
+        return view('admin_bantuan');
     }
 }

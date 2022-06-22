@@ -2,8 +2,10 @@
 
 :root{
     --main-color:#d3ad7f;
+    --second-color:#4b3c2a;
     --black:#13131a;
     --bg:#010103;
+    --hover:#c0c0c0;
     --border:.1rem solid rgba(255,255,255,.3);
 }
 
@@ -64,12 +66,13 @@ section{
     padding:.9rem 3rem;
     font-size: 1.7rem;
     color:#fff;
-    background: var(--main-color);
+    background-color: var(--second-color);
     cursor: pointer;
 }
 
 .btn:hover{
     letter-spacing: .2rem;
+    background-color: var(--second-color);
 }
 
 .header{
@@ -301,8 +304,10 @@ section{
 }
 
 .bantuan .box-container .box:hover > *{
-    color:var(--black);
+    color:var(--hover);
+    
 }
+
 
 .anggota .box-container{
     display: grid;
