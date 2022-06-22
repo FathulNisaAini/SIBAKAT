@@ -29,8 +29,6 @@
         <a href="#home">home</a>
         <a href="#tentang">tentang</a>
         <a href="#bantuan">bantuan</a>
-        <a href="#anggota">anggota</a>
-        <a href="#kontak">kontak</a>
         <a href="#artikel">artikel</a>
     </nav>
 
@@ -71,7 +69,7 @@
         <div class="content">
             <h3>Apa itu SIBAKAT ?</h3>
             <p>SIBAKAT Merupakan Sistem Informasi Bantuan Masyarakat yang memuat berbagai konten menarik dan penting untuk dibaca tentang bantuan sosial</p>
-            <a href="#" class="btn">Selengkapnya</a>
+            <a href="#" data-bs-toggle='modal' class="btn">Selengkapnya</a>
         </div>
 
     </div>
@@ -111,86 +109,6 @@
 </section>
 
 <!-- bantuan ends -->
-
-<!-- anggota starts -->
-
-<section class="anggota" id="anggota">
-
-    <h1 class="heading">  <span>Anggota</span> </h1>
-
-    <div class="box-container">
-
-        <div class="box">
-            <img src="images/quote-img.png" alt="" class="quote">
-            <p>Anggota</p>
-            <img src="images/foto1 (3).jpeg" class="user" alt="">
-            <h3>Mu'adz</h3>
-        </div>
-
-        <div class="box">
-            <img src="images/quote-img.png" alt="" class="quote">
-            <p>Anggota</p>
-            <img src="images/foto1 (1).jpeg" class="user" alt="">
-            <h3>Fathul Nisa Aini</h3>
-        </div>
-        
-        <div class="box">
-            <img src="images/quote-img.png" alt="" class="quote">
-            <p>Manager Proyek</p>
-            <img src="images/foto1 (5).png" class="user" alt="">
-            <h3>Jovian Nathaniel Ulhaq</h3>
-        </div>
-
-        <div class="box">
-            <img src="images/quote-img.png" alt="" class="quote">
-            <p>Anggota</p>
-            <img src="images/foto1 (2).jpeg" class="user" alt="">
-            <h3>Muhammad Azhar Ibnu W</h3>
-        </div>
-
-        <div class="box">
-            <img src="images/quote-img.png" alt="" class="quote">
-            <p>Anggota</p>
-            <img src="images/foto1 (4).jpeg" class="user" alt="">
-            <h3>Indra Kusuma Ananta Adimanggala</h3>
-        </div>
-
-    </div>
-
-</section>
-
-<!-- anggota ends -->
-
-<!-- contact section starts  -->
-
-<section class="contact" id="kontak">
-
-    <h1 class="heading"> Kontak </h1>
-
-    <div class="row">
-
-        <form action="">
-            <div class="inputBox">
-                <span class="fas fa-user"></span>
-                <input type="text" placeholder="nama">
-            </div>
-            <div class="inputBox">
-                <span class="fas fa-envelope"></span>
-                <input type="email" placeholder="email">
-            </div>
-            <div class="inputBox">
-                <span class="fas fa-phone"></span>
-                <input type="number" placeholder="nomer">
-            </div>
-            <input type="submit" value="kontak" class="btn">
-        </form>
-
-    </div>
-
-</section>
-
-<!-- contact section ends -->
-
 <!-- artikel section starts  -->
 
 <section class="artikel" id="artikel">
@@ -198,44 +116,20 @@
     <h1 class="heading"> Artikel</h1>
 
     <div class="box-container">
-
+        @foreach($artikel as $artikel)
         <div class="box">
             <div class="image">
-                <img src="images/a1.jpg" alt="">
+                <img src="images/{{$artikel->gambar}}" alt="">
             </div>
             <div class="content">
-                <a href="#" class="title">Bansos PKH yang Cair Juni 2022</a>
-                <span>by admin /Senin, 20 Juni 2022</span>
-                <p>Bansos PKH tahap II kembali disalurkan pada Juni 2022.
-                <p>Bansos PKH diberikan bagi keluarga yang terdaftar dalam Data Terpadu Kesejahteraan Sosial (DTKS) dan sesuai kategori penerima PKH menurut Kementerian Sosial (Kemensos).</p>
-                <a href="#" class="btn">selengkapnya</a>
+                <a href="#" class="title">{{$artikel->judul}}</a>
+                <span>by {{$artikel->uploader}} /{{ \Carbon\Carbon::parse($artikel->tanggal)->format('j F, Y') }}</span>
+                <p>{{$artikel->judul}}</p>
+                <p>{{$artikel->detail}}}</p>
+                <a href="{{ url('artikel') }}/{{$artikel->id}}" class="btn">selengkapnya</a>
             </div>
         </div>
-
-        <div class="box">
-            <div class="image">
-                <img src="images/a2.jpeg" alt="">
-            </div>
-            <div class="content">
-                <a href="#" class="title">Cara Cek dan Daftar BLT Anak Sekolah SD, SMP, SMA, Ada Bantuan Rp 4,4 Juta</a>
-                <span>by admin / Senin, 20 Juni 2022</span>
-                <p>Kementerian Sosial (Kemensos) menyalurkan BLT anak sekolah yang merupakan bagian dari Program Keluarga Harapan (PKH). Anak usia sekolah adalah komponen dalam PKH bersama lansia, disabilitas berat, dan ibu hamil. Program BLT anak sekolah diperuntukkan bagi keluarga miskin yang memiliki anak usia sekolah dengan total mencapai Rp 4,4 juta.</p>
-                <a href="#" class="btn">selengkapnya</a>
-            </div>
-        </div>
-
-        <div class="box">
-            <div class="image">
-                <img src="images/a3.jpeg" alt="">
-            </div>
-            <div class="content">
-                <a href="#" class="title">Jokowi Bagikan Bansos di Pasar Baros Serang: Cukup Nggak?</a>
-                <span>by admin / Jumat, 17 Juni 2022</span>
-                <p>Presiden Joko Widodo (Jokowi) mengunjungi Pasar Baros, Kabupaten Serang, untuk menyerahkan sejumlah bantuan sosial bagi penerima manfaat Program Keluarga Harapan (PKH) dan para pedagang. Bantuan yang diberikan senilai Rp 1,2 juta.</p>
-                <a href="#" class="btn">selengkapnya</a>
-            </div>
-        </div>
-
+        @endforeach
     </div>
 
 </section>
@@ -255,12 +149,10 @@
     </div>
 
     <div class="links">
-        <a href="#">home</a>
-        <a href="#">tentang</a>
-        <a href="#">bantuan</a>
-        <a href="#">anggota</a>
-        <a href="#">kontak</a>
-        <a href="#">artikel</a>
+        <a href="#home">home</a>
+        <a href="#tentang">tentang</a>
+        <a href="#bantuan">bantuan</a>
+        <a href="#artikel">artikel</a>
     </div>
 
     <div class="credit">created by <span>MAMONIR</span> | all rights reserved</div>
