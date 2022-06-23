@@ -10,7 +10,7 @@
         </div>
     </div>
 
-    <div class="box-container" style="color:white; font-size:150%">
+    <div class="box-container" style="color:white; font-size:150%; width:80%; margin:auto;">
         <div class="card " style="border-color:white; border-style: solid; border-width:1px;">
             <div class="content">    
                 <p>{{$bantuan->deskripsi}}<br></p>                

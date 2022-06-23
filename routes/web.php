@@ -31,6 +31,7 @@ Route::get('/', function () {
 Route::get('/', 'App\Http\Controllers\DashboardController@index');
 //Route::get('/artikel/{id}','App\Http\Controllers\ArtikelController@index');
 Route::get('/bantuan/{id}','App\Http\Controllers\BantuanController@publik_index');
+Route::get('/artikel/{id}','App\Http\Controllers\ArtikelController@publik_index');
 
 Route::get('/admin', 'App\Http\Controllers\AdminController@index');
 Route::get('/admin/bantuan_admin', 'App\Http\Controllers\AdminController@bantuan');

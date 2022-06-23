@@ -16,4 +16,13 @@ class ArtikelController extends Controller
     {
         return view('admin_artikel');
     }
+
+    public function publik_index($id)
+    {
+        $artikel = DB::table('artikel')
+        ->where('id_artikel',$id)
+        ->first();
+        //dd($artikel);
+        return view('artikel',compact('artikel'));
+    }
 }
