@@ -6,7 +6,7 @@
           <h3 id="judul" >Bantuan</h3>
           <h6 class="card-subtitle mb-2 text-muted">Tabel Data Informasi Bantuan</h6>
           <div class="d-grid gap-2 d-md-block mt-3"> 
-            <a role="button" class="btn btn-primary" href="/admin/tambah_bantuan">Tambah</a> 
+            <a role="button" class="btn btn-primary" href="/admin/admin_bantuan/klik">Tambah</a> 
           </div>
         </div>
 
@@ -34,9 +34,9 @@
                 $gambar = 'notfound.jpg';
             } 
           @endphp
-
             <tr>
-              <td>{{$bantuan->id_bantuan}}</td>
+
+              <td>{{$loop->iteration}}</td>
               <td>
                 <textarea readonly class="form-control" id="exampleFormControlTextarea1" rows="3" >{{$bantuan->nama}}</textarea>
               </td>
@@ -57,8 +57,10 @@
               </td>
               <td> 
                 <div class="d-grid gap-2 d-md-block"> 
-                  <button class="btn btn-success">Ubah</button>  
-                  <button class="btn btn-danger ">Hapus</button>
+                  <a role="button" class="btn btn-success" href="/admin/admin_bantuan/ubah/{{$bantuan->id_bantuan}}">Ubah</a>  
+                  <a role="button" class="btn btn-danger " 
+                      href="/admin/admin_bantuan/hapus/{{$bantuan->id_bantuan}}"
+                      onclick="return confirm('Apakah anda yakin ingin menghapus data?');">Hapus</a>
                 </div>  
               </td>   
             </tr>

@@ -6,7 +6,9 @@
       <h3 id="judul" >Artikel</h3>
       <h6 class="card-subtitle mb-2 text-muted">Tabel Data Informasi Artikel</h6>
 
-      <div class="d-grid gap-2 d-md-block mt-3"> <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#tambahModal">Tambah</button> </div>
+      <div class="d-grid gap-2 d-md-block mt-3"> 
+        <a role="button" class="btn btn-primary" href="/admin/admin_artikel/klik">Tambah</a> 
+      </div>
 
       <div class="table-responsive">
           <table class="table table-hover mt-2 text-center">
@@ -30,7 +32,7 @@
             @endphp
 
               <tr>
-                <td>{{$artikel->id_artikel}}</td>
+                <td>{{$loop->iteration}}</td>
                 <td>
                   <textarea readonly class="form-control" id="exampleFormControlTextarea1" rows="3" >{{$artikel->judul}}</textarea>                         
                 </td>
@@ -43,8 +45,10 @@
                 <td>{{$artikel->tanggal}}</td>
                 <td> 
                   <div class="d-grid gap-2 d-md-block"> 
-                    <button class="btn btn-success">Ubah</button>  
-                    <button class="btn btn-danger ">Hapus</button>
+                    <a role="button" class="btn btn-success" href="/admin/admin_artikel/ubah/{{$artikel->id_artikel}}">Ubah</a>  
+                    <a role="button" class="btn btn-danger " 
+                      href="/admin/admin_artikel/hapus/{{$artikel->id_artikel}}"
+                      onclick="return confirm('Apakah anda yakin ingin menghapus data?');">Hapus</a>
                   </div>  
                 </td>     
               </tr>

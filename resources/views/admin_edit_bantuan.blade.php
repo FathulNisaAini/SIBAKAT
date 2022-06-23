@@ -2,10 +2,10 @@
 @section('konten')
         <!-- Page Content  -->
         <div style="padding: 2%" class="cards mt-2 rounded-3">
-          <h3 id="judul" >Tambah Bantuan</h3>
-          <h6 class="card-subtitle mb-2 text-muted">Tambah Data Informasi Bantuan</h6>
+          <h3 id="judul" >Ubah Bantuan</h3>
+          <h6 class="card-subtitle mb-2 text-muted">Ubah Data Informasi Bantuan</h6>
           </br>
-                <form action="/admin/admin_bantuan/tambah" method="POST"
+                <form action="{{ url('admin/admin_bantuan/update', $bantuan->id_bantuan) }}" method="POST"
                     enctype="multipart/form-data">   
                     @csrf
                     <input type="hidden" class="form-control" name="id_bantuan" value="">
@@ -20,7 +20,14 @@
                     </div>
 
                     <div class="mb-3">
-                        <label for="gambar" class="form-label">Gambar</label>
+                        <label for="gambar" class="form-label">Gambar Lama</label></br>
+                        <img src="{!! asset('images/' . $bantuan->gambar . '') !!}" alt={{ $bantuan->nama }}
+                        style="max-height: 200px">
+                        <p>{{ $bantuan->gambar }}</p>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="gambar" class="form-label">Upload Gambar Baru</label>
                         <input class="form-control @error('gambar') is-invalid @enderror" type="file" id="gambar"
                             name="gambar" required>
                         @error('gambar')
@@ -70,7 +77,7 @@
                         @enderror
                     </div>
                     <button type="button" class="btn btn-danger" onclick="history.back();">Kembali</button>
-                    <button type="submit" class="btn btn-success" onclick="return confirm('Apakah Anda Yakin Ingin Menambah Data?')">Tambah Data</button>
+                    <button type="submit" class="btn btn-success" onclick="return confirm('Apakah Anda Yakin Ingin Mengubah Data?')">Ubah Data</button>
 
                 </form>
             
