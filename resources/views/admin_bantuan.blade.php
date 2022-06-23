@@ -19,6 +19,10 @@
               <th>Nama</th>
               <th>Gambar</th>
               <th>Deskripsi</th>
+              <th>Persyaratan</th>
+              <th>Waktu</th>
+              <th>Lokasi</th>
+              <th>Sumber</th>
               <th class="">Aksi</th>
       
             </tr>
@@ -33,23 +37,33 @@
 
             <tr>
               <td>{{$bantuan->id_bantuan}}</td>
-              <td>{{$bantuan->nama}}</td>
+              <td>
+                <textarea readonly class="form-control" id="exampleFormControlTextarea1" rows="3" >{{$bantuan->nama}}</textarea>
+              </td>
               <td>
                 <img src="{!! asset('images/' . $gambar . '') !!}" width="150"  class="img-fluid" alt="''.$bantuan->gambar.''">
               </td>
               <td>
                 <textarea readonly class="form-control" id="exampleFormControlTextarea1" rows="3" >{{$bantuan->deskripsi}}</textarea>
               </td>
+              <td>
+                <textarea readonly class="form-control" id="exampleFormControlTextarea1" rows="3" >{{$bantuan->persyaratan}}</textarea>
+              </td>
+              <td>{{$bantuan->waktu}}</td>
+              <td>{{$bantuan->lokasi}}</td>
+
+              <td>
+                <textarea readonly class="form-control" id="exampleFormControlTextarea1" rows="3" >{{$bantuan->sumber}}</textarea>
+              </td>
               <td> 
                 <div class="d-grid gap-2 d-md-block"> 
                   <button class="btn btn-success">Ubah</button>  
                   <button class="btn btn-danger ">Hapus</button>
                 </div>  
-              </td>
-    
+              </td>   
             </tr>
           @endforeach
-          </table>
+        </table>
     </div>
   </div>
     

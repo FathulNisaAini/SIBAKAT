@@ -14,7 +14,11 @@ class AdminController extends Controller
 {
     public function index()
     {
-        return view('admin');
+        $bantuan = DB::table('bantuan')
+        ->latest('id_bantuan')
+        ->take(3)
+        ->get();
+        return view('admin', compact('bantuan'));
     }
 
     public function bantuan()
@@ -25,7 +29,10 @@ class AdminController extends Controller
 
     public function artikel()
     {
-        return view('admin_artikel');
+        $artikel = DB::table('artikel')
+        ->join('admin', 'admin.id_admin', '=', 'artikel.id_admin')
+        ->get();
+        return view('admin_artikel', compact('artikel'));
     }
 
     public function tambah()
