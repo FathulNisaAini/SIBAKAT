@@ -30,7 +30,7 @@
         <div class="content">
             <h3>Apa itu SIBAKAT ?</h3>
             <p>SIBAKAT Merupakan Sistem Informasi Bantuan Masyarakat yang memuat berbagai konten menarik dan penting untuk dibaca tentang bantuan sosial</p>
-            <a href="#" data-bs-toggle='modal' class="btn">Selengkapnya</a>
+            <!--<a href="#" data-bs-toggle='modal' class="btn">Selengkapnya</a> selengkapnya mau diisi apa?-->
         </div>
 
     </div>
@@ -48,9 +48,9 @@
     <div class="box-container">
 
     @foreach($bantuan as $bantuan)
-        <div class="box" style="background-image:linear-gradient(to bottom, rgba(3, 15, 29, 0.7) 50%,rgba(3, 15, 29, 0.6) 100%), url('images/{{$bantuan->gambar}}');background-position: center">
+        <div class="box" style="background-image:linear-gradient(to bottom, rgba(3, 15, 29, 0.7) 50%,rgba(3, 15, 29, 0.6) 100%), url('images/{{$bantuan->gambar}}'); background-position: center">
             <h3 style="margin-top: 26%">{{$bantuan->nama}}</h3>
-            <a href="#" class="btn">Detail Bantuan</a>
+            <a href="{{ url('bantuan') }}/{{$bantuan->id_bantuan}}" class="btn" >Detail Bantuan</a>
         </div>
     @endforeach
 

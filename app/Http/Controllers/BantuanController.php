@@ -16,4 +16,13 @@ class BantuanController extends Controller
     {
         return view('admin_bantuan');
     }
+
+    public function publik_index($id)
+    {
+        $bantuan = DB::table('bantuan')
+        ->where('id_bantuan',$id)
+        ->first();
+        //dd($bantuan);
+        return view('bantuan',compact('bantuan'));
+    }
 }
