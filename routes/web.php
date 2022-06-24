@@ -34,6 +34,8 @@ Route::get('/', 'App\Http\Controllers\DashboardController@index');
 //Route::get('/artikel/{id}','App\Http\Controllers\ArtikelController@index');
 Route::get('/bantuan/{id}','App\Http\Controllers\BantuanController@publik_index');
 Route::get('/artikel/{id}','App\Http\Controllers\ArtikelController@publik_index');
+Route::get('/login', 'App\Http\Controllers\DashboardController@login');
+
 
 // Route::get('/admin', 'App\Http\Controllers\AdminController@index');
 // Route::get('/admin/admin_bantuan', 'App\Http\Controllers\AdminController@bantuan');

@@ -20,7 +20,14 @@ class DashboardController extends Controller
         ->latest('id_bantuan')
         ->take(3)
         ->get();
+        $admin = DB::table('admin')
+        ->get();
         //dd($bantuan);
-        return view('index', compact('artikel','bantuan'));
+        return view('index', compact('artikel','bantuan','admin'));
+    }
+
+    public function login()
+    {
+        return view('login');
     }
 }
