@@ -19,9 +19,9 @@ use App\Http\Controllers\AdminController;
 //     return view('welcome');
 // });
 
-Route::get('/', function () {
-    return view('index');
-});
+// Route::get('/', function () {
+//     return view('index');
+// });
 
 // // Dashboard
 // Route::get('/', [DashboardController::class, 'index'])->middleware('guest');
@@ -30,18 +30,19 @@ Route::get('/', function () {
  // Admin
 // Route::get('/admin', [AdminController::class, 'admin']);
 
-Route::get('/', 'App\Http\Controllers\DashboardController@index');
+Route::get('/', 'App\Http\Controllers\DashboardController@index')->middleware('guest');
 //Route::get('/artikel/{id}','App\Http\Controllers\ArtikelController@index');
 Route::get('/bantuan/{id}','App\Http\Controllers\BantuanController@publik_index');
 Route::get('/artikel/{id}','App\Http\Controllers\ArtikelController@publik_index');
-Route::get('/login', 'App\Http\Controllers\DashboardController@login');
+Route::post('/login', 'App\Http\Controllers\LoginController@index')->middleware('guest');;
+Route::post('/logout', 'App\Http\Controllers\LoginController@logout');
 
 
 // Route::get('/admin', 'App\Http\Controllers\AdminController@index');
 // Route::get('/admin/admin_bantuan', 'App\Http\Controllers\AdminController@bantuan');
 // Route::get('/admin/admin_artikel', 'App\Http\Controllers\AdminController@artikel');
 // Route::get('/admin/admin_bantuan/tambah', 'App\Http\Controllers\AdminController@tambah_bantuan');
-Route::get('/admin', [AdminController::class, 'index']);
+Route::get('/admin', [AdminController::class, 'index'])->middleware('auth');
 
 Route::get('/admin/admin_bantuan', [AdminController::class, 'bantuan']);
 Route::get('/admin/admin_bantuan/klik', [AdminController::class, 'button_tambah_bantuan']);

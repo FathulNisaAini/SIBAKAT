@@ -14,13 +14,13 @@ class DashboardController extends Controller
     public function index()
     {      
         $artikel = DB::table('artikel')
-        ->join('admin', 'admin.id_admin', '=', 'artikel.id_admin')
+        ->join('users', 'users.id', '=', 'artikel.id_admin')
         ->get();
         $bantuan = DB::table('bantuan')
         ->latest('id_bantuan')
         ->take(3)
         ->get();
-        $admin = DB::table('admin')
+        $admin = DB::table('users')
         ->get();
         //dd($bantuan);
         return view('index', compact('artikel','bantuan','admin'));

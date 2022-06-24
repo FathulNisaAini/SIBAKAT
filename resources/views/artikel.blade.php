@@ -1,11 +1,11 @@
 @extends('template')
 @section('konten')
-<!-- bantuan starts  -->
+<!-- artikel starts  -->
 
-<section class="bantuan" id="bantuan">
+<section class="artikel" id="artikel">
     <div class="d-flex justify-content-center" style="padding-top:8%">
         <div style="display:flex; justify-content:center">    
-            <h class="heading">{{$artikel->judul}} </h1>    
+            <h1 class="heading">{{$artikel->judul}} </h1>    
             <img src="/images/{{$artikel->gambar}}" style='width:80%; height:auto' alt="">
         </div>
     </div>
@@ -25,7 +25,7 @@
     </div>
 
 </section>
-<!-- bantuan ends -->
+<!-- artikel ends -->
 
 
 @endsection

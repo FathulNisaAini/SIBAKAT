@@ -123,7 +123,7 @@ class AdminController extends Controller
     public function artikel()
     {
         $artikel = DB::table('artikel')
-        ->join('admin', 'admin.id_admin', '=', 'artikel.id_admin')
+        ->join('users', 'users.id', '=', 'artikel.id_admin')
         ->get();
         return view('admin_artikel', compact('artikel'));
     }

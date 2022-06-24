@@ -11,7 +11,6 @@
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
 
-
     <!-- custom css file link  -->
     <link rel="stylesheet" href="{!! asset('css/style.css') !!}">
     <link rel="shortcut icon" href="{!! asset('images/logo.png') !!}">
@@ -22,21 +21,21 @@
     
 <!-- header section starts  -->
 
-<header class="header">
+<header class="header" style="height: 70px">
 
-    <a href="#" class="logo">
-        <img src="{!! asset('images/logo.png') !!}" alt="">
+    <a href="{{ url('/') }}" class="logo">
+        <img src="{!! asset('images/logo.png') !!}" alt="Logo Sibakat">
     </a>
 
     <nav class="navbar navbar-expand-lg">
-        <a href="#home">home</a>
-        <a href="#tentang">tentang</a>
-        <a href="#bantuan">bantuan</a>
-        <a href="#artikel">artikel</a>
+        <a href="#home" style="text-decoration: none;">Home</a>
+        <a href="#tentang" style="text-decoration: none;">Tentang</a>
+        <a href="#bantuan" style="text-decoration: none;">Bantuan</a>
+        <a href="#artikel" style="text-decoration: none;">Artikel</a>
     </nav>
 
-    <div class="icons">
-        <a href="admin" class="btn">Masuk</a>
+    <div class="icons" style="padding-bottom: 10px">
+        <a role="button" class="btn" data-bs-toggle="modal" data-bs-target="#loginModal">Masuk</a>
     </div>
 
 </header>
@@ -50,18 +49,18 @@
 <section class="footer">
 
     <div class="share">
-        <a href="#" class="fab fa-facebook-f"></a>
-        <a href="#" class="fab fa-twitter"></a>
-        <a href="#" class="fab fa-instagram"></a>
-        <a href="#" class="fab fa-linkedin"></a>
-        <a href="#" class="fab fa-pinterest"></a>
+        <a href="#" class="fab fa-facebook-f" style="text-decoration: none;"></a>
+        <a href="#" class="fab fa-twitter" style="text-decoration: none;"></a>
+        <a href="#" class="fab fa-instagram" style="text-decoration: none;"></a>
+        <a href="#" class="fab fa-linkedin" style="text-decoration: none;"></a>
+        <a href="#" class="fab fa-pinterest" style="text-decoration: none;"></a>
     </div>
 
     <div class="links">
-        <a href="#home">home</a>
-        <a href="#tentang">tentang</a>
-        <a href="#bantuan">bantuan</a>
-        <a href="#artikel">artikel</a>
+        <a href="#home" style="text-decoration: none;">Home</a>
+        <a href="#tentang" style="text-decoration: none;">Tentang</a>
+        <a href="#bantuan" style="text-decoration: none;">Bantuan</a>
+        <a href="#artikel" style="text-decoration: none;">Artikel</a>
     </div>
 
     <div class="credit">created by <span>MAMONIR</span> | all rights reserved</div>
