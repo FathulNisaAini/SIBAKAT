@@ -57,7 +57,7 @@
               </td>
               <td> 
                 <div class="d-grid gap-2 d-md-block"> 
-                  <a role="button" class="btn btn-success" href="/admin/admin_bantuan/ubah/{{$bantuan->id_bantuan}}">Ubah</a>  
+                  <a role="button" style="margin-bottom: 3%" class="btn btn-success" href="/admin/admin_bantuan/ubah/{{$bantuan->id_bantuan}}">Ubah</a>  
                   <a role="button" class="btn btn-danger " 
                       href="/admin/admin_bantuan/hapus/{{$bantuan->id_bantuan}}"
                       onclick="return confirm('Apakah anda yakin ingin menghapus data?');">Hapus</a>
