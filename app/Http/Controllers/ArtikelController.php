@@ -25,4 +25,11 @@ class ArtikelController extends Controller
         //dd($artikel);
         return view('artikel',compact('artikel'));
     }
+
+    public function lain(){
+        $artikel = DB::table('artikel')
+        ->join('users', 'users.id', '=', 'artikel.id_admin')
+        ->get();
+        return view('artikel_lain',compact('artikel'));
+    }
 }

@@ -6,12 +6,13 @@
     <div class="d-flex justify-content-center" style="padding-top:8%">
         <div style="display:flex; justify-content:center">    
             <h1 class="heading">{{$artikel->judul}} </h1>    
-            <img src="/images/{{$artikel->gambar}}" style='width:80%; height:auto' alt="">
         </div>
     </div>
-
-    <div class="box-container" style="color:white; font-size:150%; width:80%; margin: auto;">
-        <div class="card " style="border-color:white; border-style: solid; border-width:1px;">
+    <div style="display:flex; justify-content:center">    
+        <img src="/images/{{$artikel->gambar}}" style='width:80%; height:auto' alt=""> 
+    </div>
+    <div class="box-container" style="color:white; font-size:150%; width:80%; margin: auto; padding-top:2%;">
+        <div class="card " style="border-color:white; border-style: solid; border-width:1px;background-color:transparent;">
             <div class="content">    
                 <p>{{$artikel->detail}}<br></p>
                 <p style="text-align:right">

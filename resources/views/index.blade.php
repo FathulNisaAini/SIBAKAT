@@ -71,14 +71,15 @@
     <h1 class="heading">Bantuan Masyarakat <span>Terbaru</span> </h1>
 
     <div class="box-container">
-
     @foreach($bantuan as $bantuan)
         <div class="box" style="background-image:linear-gradient(to bottom, rgba(3, 15, 29, 0.7) 50%,rgba(3, 15, 29, 0.6) 100%), url('images/{{$bantuan->gambar}}'); background-position: center">
             <h3 style="margin-top: 26%">{{$bantuan->nama}}</h3>
             <a href="{{ url('bantuan') }}/{{$bantuan->id_bantuan}}" class="btn" >Detail Bantuan</a>
         </div>
     @endforeach
-
+    </div>
+    <div style="display:flex; justify-content:center">
+        <a href="{{ url('bantuan_lain') }}" class="btn" >Daftar Bantuan</a>
     </div>
 
 </section>
@@ -88,7 +89,7 @@
 
 <section class="artikel" id="artikel">
 
-    <h1 class="heading"> Artikel</h1>
+    <h1 class="heading"> Artikel <span>Terbaru</span></h1>
 
     <div class="box-container">
         @foreach($artikel as $artikel)
@@ -100,13 +101,15 @@
                 <a class="title" style="text-decoration: none;">{{$artikel->judul}}</a>
                 <span>by {{$artikel->nama}} /{{ \Carbon\Carbon::parse($artikel->tanggal)->format('j F, Y') }}</span>
                 <p>{{$artikel->judul}}</p>
-                <p>{{$artikel->detail}}}</p>
+                <p>{{$artikel->detail}}</p>
                 <a href="{{ url('artikel') }}/{{$artikel->id_artikel}}" class="btn">selengkapnya</a>
             </div>
         </div>
         @endforeach
     </div>
-
+    <div style="display:flex; justify-content:center">
+        <a href="{{ url('artikel_lain') }}" class="btn" >Semua artikel</a>
+    </div>
 </section>
 
 <!-- artikel section ends -->

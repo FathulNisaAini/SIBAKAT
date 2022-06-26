@@ -31,12 +31,12 @@ use App\Http\Controllers\AdminController;
 // Route::get('/admin', [AdminController::class, 'admin']);
 
 Route::get('/', 'App\Http\Controllers\DashboardController@index')->middleware('guest');
-//Route::get('/artikel/{id}','App\Http\Controllers\ArtikelController@index');
+Route::get('/bantuan_lain','App\Http\Controllers\BantuanController@lain');
+Route::get('/artikel_lain','App\Http\Controllers\ArtikelController@lain');
 Route::get('/bantuan/{id}','App\Http\Controllers\BantuanController@publik_index');
 Route::get('/artikel/{id}','App\Http\Controllers\ArtikelController@publik_index');
 Route::post('/login', 'App\Http\Controllers\LoginController@index')->middleware('guest');;
 Route::post('/logout', 'App\Http\Controllers\LoginController@logout');
-
 
 // Route::get('/admin', 'App\Http\Controllers\AdminController@index');
 // Route::get('/admin/admin_bantuan', 'App\Http\Controllers\AdminController@bantuan');

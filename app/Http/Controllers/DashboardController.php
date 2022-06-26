@@ -15,6 +15,8 @@ class DashboardController extends Controller
     {      
         $artikel = DB::table('artikel')
         ->join('users', 'users.id', '=', 'artikel.id_admin')
+        ->latest('id_artikel')
+        ->take(3)
         ->get();
         $bantuan = DB::table('bantuan')
         ->latest('id_bantuan')
