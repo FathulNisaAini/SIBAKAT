@@ -9,7 +9,7 @@
                     enctype="multipart/form-data">   
                     @csrf
                     <input type="hidden" class="form-control" name="id_artikel" value="">
-                    <input type="hidden" class="form-control" name="id_admin" value="1">
+                    <input type="hidden" class="form-control" name="id_admin" value="{{ auth()->user()->id }}">
                     <div class="mb-3">
                         <label for="judul" class="form-label">Judul</label>
                         <input type="text" class="form-control @error('judul') is-invalid @enderror" name="judul" required value="{{ old('judul') }}">
