@@ -62,10 +62,13 @@
                     <td style="width:10%">{{ $bantuan->persyaratan}}</td>
                     <td style="width:7%">{{ $bantuan->waktu}}</td>
                     <td style="width:8%">{{ $bantuan->lokasi}}</td>
-                    <td style="width:20%"><a style="width:95%; height:80%" class="btn {{$kelas}}" href={{$link}}>Kunjungi laman</a></td>
+                    <td style="width:20%"><a style="width:100%; height:80%" class="btn {{$kelas}}" href={{$link}}>Kunjungi laman</a></td>
                 </tr>
                 @endforeach
             </table>
+        </div>
+        <div class="iq-pt-20">
+            <button type="button" class="btn btn-danger" onclick="history.back();">Kembali</button>
         </div>
     </section>
 <!-- bantuan ends -->

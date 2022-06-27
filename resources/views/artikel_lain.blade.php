@@ -43,6 +43,9 @@
         </div>
         @endforeach
     </div>
+    <div class="iq-pt-20">
+        <button type="button" class="btn btn-danger" onclick="history.back();">Kembali</button>
+</div>
 </section>
 <!-- bantuan ends -->
 
