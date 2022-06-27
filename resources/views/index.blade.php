@@ -9,10 +9,7 @@
         <h3>SIBAKAT</h3>
         <p>Sistem Informasi Bantuan Masyarakat</p>
         <a role="button" class="btn" data-bs-toggle="modal" data-bs-target="#loginModal">Masuk</a>
-        {{-- Modal --}}
-        @include('login-modal')
-
-
+        
 </section>
 
 <!-- home section ends -->

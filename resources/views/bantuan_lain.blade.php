@@ -1,4 +1,4 @@
-@extends('template')
+@extends('template-menu')
 @section('konten')
 <!-- bantuan starts  -->
 <style>

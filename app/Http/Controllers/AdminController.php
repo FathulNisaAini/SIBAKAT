@@ -88,7 +88,7 @@ class AdminController extends Controller
     {
         $this->validate($request, [
             'nama'          =>  'required',
-            'gambar'        =>  'required|image|file|mimes:jpeg,png,jpg',
+            'gambar'        =>  'image|file|mimes:jpeg,png,jpg',
             'deskripsi'     =>  'required',
             'waktu'         =>  'required',
             'lokasi'        =>  'required',
@@ -96,17 +96,22 @@ class AdminController extends Controller
             'persyaratan'   =>  'required',
         ]);
 
-        // menyimpan data file yang diupload ke variabel $file
-	    $file = $request->file('gambar');
-	    $nama_file = time()."_".$file->getClientOriginalName();
+        if ($request->gambar == NULL) {
+            $gambar = $request->gambar_lama;
+        } else {
+            // menyimpan data file yang diupload ke variabel $file
+            $file = $request->file('gambar');
+            $nama_file = time() . "_" . $file->getClientOriginalName();
 
-        // isi dengan nama folder tempat kemana file diupload
-	    $tujuan_upload = 'images';
-	    $file->move($tujuan_upload,$nama_file);
+            // isi dengan nama folder tempat kemana file diupload
+            $tujuan_upload = 'images';
+            $file->move($tujuan_upload, $nama_file);
+            $gambar = $nama_file;
+        }
         
         $bantuan                = Bantuan::find($id);
         $bantuan->nama          = $request->nama;
-        $bantuan->gambar        = $nama_file;
+        $bantuan->gambar        = $gambar;
         $bantuan->deskripsi     = $request->deskripsi;
         $bantuan->waktu         = $request->waktu;
         $bantuan->lokasi        = $request->lokasi;
@@ -178,23 +183,28 @@ class AdminController extends Controller
     {
         $this->validate($request, [
             'judul'     =>  'required',
-            'gambar'    =>  'required|image|file|mimes:jpeg,png,jpg',
+            'gambar'    =>  'image|file|mimes:jpeg,png,jpg',
             'tanggal'   =>  'required',
             'detail'    =>  'required',
             'id_admin'  =>  'required',
         ]);
 
-        // menyimpan data file yang diupload ke variabel $file
-	    $file = $request->file('gambar');
-	    $nama_file = time()."_".$file->getClientOriginalName();
+        if ($request->gambar == NULL) {
+            $gambar = $request->gambar_lama;
+        } else {
+            // menyimpan data file yang diupload ke variabel $file
+            $file = $request->file('gambar');
+            $nama_file = time() . "_" . $file->getClientOriginalName();
 
-        // isi dengan nama folder tempat kemana file diupload
-	    $tujuan_upload = 'images';
-	    $file->move($tujuan_upload,$nama_file);
+            // isi dengan nama folder tempat kemana file diupload
+            $tujuan_upload = 'images';
+            $file->move($tujuan_upload, $nama_file);
+            $gambar = $nama_file;
+        }
         
         $artikel                = Artikel::find($id);
         $artikel->judul         = $request->judul;
-        $artikel->gambar        = $nama_file;
+        $artikel->gambar        = $gambar;
         $artikel->detail        = $request->detail;
         $artikel->tanggal       = $request->tanggal;
         $artikel->id_admin       = $request->id_admin;

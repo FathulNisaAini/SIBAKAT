@@ -11,7 +11,7 @@
                     <input type="hidden" class="form-control" name="id_bantuan" value="">
                     <div class="mb-3">
                         <label for="nama" class="form-label">Nama</label>
-                        <input type="text" class="form-control @error('nama') is-invalid @enderror" name="nama" required value="{{ old('nama') }}">
+                        <input type="text" class="form-control @error('nama') is-invalid @enderror" name="nama" required value="{{ $bantuan->nama }}">
                         @error('nama')
                             <div class="invalid-feedback">
                                 {{ $message }}
@@ -24,12 +24,13 @@
                         <img src="{!! asset('images/' . $bantuan->gambar . '') !!}" alt={{ $bantuan->nama }}
                         style="max-height: 200px">
                         <p>{{ $bantuan->gambar }}</p>
+                        <input type="hidden" class="form-control" name="gambar_lama" value="{{ $bantuan->gambar }}">
                     </div>
 
                     <div class="mb-3">
                         <label for="gambar" class="form-label">Upload Gambar Baru</label>
                         <input class="form-control @error('gambar') is-invalid @enderror" type="file" id="gambar"
-                            name="gambar" required>
+                            name="gambar">
                         @error('gambar')
                             <div class="invalid-feedback">
                                 {{ $message }}
@@ -39,13 +40,12 @@
 
                     <div class="mb-3">
                         <label for="exampleInputPassword1" class="form-label">Deskripsi </label>
-                        <textarea class="form-control" name="deskripsi" id="exampleFormControlTextarea1" rows="3"></textarea>
+                        <textarea class="form-control" name="deskripsi" id="exampleFormControlTextarea1" rows="3">{{ $bantuan->deskripsi }}</textarea>
                     </div>
 
                     <div class="mb-3">
                         <label for="persyaratan" class="form-label">Persyaratan</label>
-                        <input type="text" class="form-control @error('persyaratan') is-invalid @enderror" name="persyaratan" required value="{{ old('persyaratan') }}">
-                        @error('persyaratan')
+                        <textarea class="form-control @error('persyaratan') is-invalid @enderror" name="persyaratan" rows="3" required>{{ $bantuan->persyaratan }}</textarea>                        @error('persyaratan')
                             <div class="invalid-feedback">
                                 {{ $message }}
                             </div>
@@ -54,12 +54,12 @@
 
                     <div class="mb-3">
                         <label for="exampleInputPassword1" class="form-label">Waktu </label>
-                        <input type="date" class="form-control" name="waktu">
+                        <input type="date" class="form-control" name="waktu" value="{{ $bantuan->waktu }}">
                     </div>         
 
                     <div class="mb-3">
                         <label for="peryaratan" class="form-label">Lokasi</label>
-                        <input type="text" class="form-control @error('lokasi') is-invalid @enderror" name="lokasi" required value="{{ old('lokasi') }}">
+                        <input type="text" class="form-control @error('lokasi') is-invalid @enderror" name="lokasi" required value="{{ $bantuan->lokasi }}">
                         @error('lokasi')
                             <div class="invalid-feedback">
                                 {{ $message }}
@@ -69,7 +69,7 @@
                     
                     <div class="mb-3">
                         <label for="sumber" class="form-label">Sumber</label>
-                        <input type="text" class="form-control @error('sumber') is-invalid @enderror" name="sumber" required value="{{ old('sumber') }}">
+                        <input type="text" class="form-control @error('sumber') is-invalid @enderror" name="sumber" required value="{{ $bantuan->sumber }}">
                         @error('sumber')
                             <div class="invalid-feedback">
                                 {{ $message }}

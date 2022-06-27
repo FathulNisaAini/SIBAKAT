@@ -28,10 +28,6 @@
     </a>
 
     <nav class="navbar navbar-expand-lg">
-        <a href="#home" style="text-decoration: none;">Home</a>
-        <a href="#tentang" style="text-decoration: none;">Tentang</a>
-        <a href="#bantuan" style="text-decoration: none;">Bantuan</a>
-        <a href="#artikel" style="text-decoration: none;">Artikel</a>
     </nav>
 
     <div class="icons" style="padding-bottom: 10px">
