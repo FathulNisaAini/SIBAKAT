@@ -5,7 +5,7 @@
 <section class="artikel" id="artikel">
     <div class="d-flex justify-content-center" style="padding-top:8%">
         <div style="display:flex; justify-content:center">    
-            <h1 class="heading">{{$artikel->judul}} </h1>    
+            <h1 class="heading" style="padding-top:10%">{{$artikel->judul}} </h1>    
         </div>
     </div>
     <div style="display:flex; justify-content:center">    

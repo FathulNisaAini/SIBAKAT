@@ -10,7 +10,7 @@
 <section class="bantuan" id="bantuan">
     <div class="d-flex justify-content-center" style="padding-top:8%">
         <div style="display:flex; justify-content:center">    
-            <h1 class="heading">{{$bantuan->nama}} </h1>  <br>  
+            <h1 class="heading" style="padding-top:10%">{{$bantuan->nama}} </h1>  <br>  
         </div>
     </div>
     <div style="display:flex; justify-content:center">    
