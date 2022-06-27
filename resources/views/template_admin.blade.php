@@ -38,7 +38,7 @@
                 <h3><img src="{!! asset('images/logo.png') !!}" class="img-fluid" /><span>SIBAKAT</span></h3>
             </div>
             <ul class="list-unstyled components">
-                <li class="active">
+                <li class="">
                     <a href="/admin" class="dashboard"><i
                             class="material-icons">dashboard</i><span>Dashboard</span></a>
                 </li>
@@ -55,31 +55,7 @@
         </nav>
 
         <div id="content">
-
-            {{-- <div class="top-navbar">
-                <nav id="bar" class="navbar navbar-expand-lg navbar-light" style=" padding-bottom: 10px;">
-                    <div class="container-fluid">
-                        <a class="navbar-brand"></a>
-                        <div class="d-flex justify-content-end">
-                            <img src="https://github.com/mdo.png" alt="hugenerd" width="30" height="30"
-                                class="rounded-circle mt-1">
-                            <div class="btn-group ml-auto justify-content-end">
-                                <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button"
-                                    data-bs-toggle="dropdown" aria-expanded="false"
-                                    style="color:#202020">{{ auth()->user()->nama }}&nbsp&nbsp</a>
-                                <div class="dropdown-menu dropdown-menu-end">
-                                    <a class="dropdown-item" href="#">
-                                        <form action="/logout" method="post">
-                                            @csrf
-                                            <button type="submit" class="dropdown-item">Logout</button>
-                                        </form>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </nav>
-          </div> --}}
+            
             <div class="top-navbar">
                 <nav class="navbar navbar-expand-sm navbar-light">
                     <div class="container-fluid">
