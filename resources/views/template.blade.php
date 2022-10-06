@@ -24,7 +24,7 @@
 <header class="header" style="height: 70px">
 
     <a href="{{ url('/') }}" class="logo">
-        <img src="{!! asset('images/logo.png') !!}" alt="Logo Sibakat">
+        <img src="{!! asset('images/logo.png') !!}" alt="">
     </a>
 
     <nav class="navbar navbar-expand-lg">

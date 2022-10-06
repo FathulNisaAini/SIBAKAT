@@ -1,12 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap');
 
 :root{
-    --main-color:#d3ad7f;
-    --second-color:#4b3c2a;
-    --black:#13131a;
-    --bg:#010103;
+    --main-color:#FFA500;
+    --second-color:#FFA500;
+    --black:#000000;
+    --bg:#000000;
     --hover:#c0c0c0;
-    --border:.1rem solid rgba(255,255,255,.3);
+    --border:.1rem solid rgba(255, 255, 255, 0.3);
 }
 
 *{
@@ -80,14 +80,14 @@ section{
     align-items: center;
     justify-content: space-between;
     padding:1.5rem 7%;
-    border-bottom: var(--border);
+    
     position: fixed;
     top:0; left: 0; right: 0;
     z-index: 1000;
 }
 
 .header .logo img{
-    height: 6rem;
+    height: 4rem;
 }
 
 .header .navbar a{
